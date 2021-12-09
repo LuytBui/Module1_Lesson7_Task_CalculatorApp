@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        table{
+            border:2px solid black;
+            border-radius:12px;
+            padding:10px;
+            background-color:white;
+        }
+        .monitor{
+            text-align:right;
+            resize:none;
+            font-size:200%;
+            border:2px solid black;
+            border-radius:12px;
+        }
+        .symbolButtons{
+            width:50px;
+            height:20px;
+            background-color:#F6DFAB;
+            font-size:90%;
+            border:1px solid black;
+            border-radius:5px;
+        }
+        .actionButtons{
+            width:50px;
+            height:20px;
+            color:white;
+            background-color:blue;
+            font-size:90%;
+            border:1px solid black;
+            border-radius:5px;
+        }
+        .numberButtons{
+            width:50px;
+            height:20px;
+            background-color:#eee;
+            font-size:90%;
+            border:1px solid black;
+            border-radius:5px;
+        }
+
+        .inactiveButtons{
+            width:50px;
+            height:20px;
+            background-color:#8F919B;
+            font-size:90%;
+            border:1px solid black;
+            border-radius:5px;
+        }
+        .logo{
+            color:blue;
+            text-align:center;
+            font-size:100%;
+            font-weight:bold;
+        }
+        .version{
+            color:blue;
+            text-align:center;
+            font-size:110%;
+            font-weight:bold;
+        }
+        .info{
+            font-size:80%;
+            text-decoration: underline;
+            text-align:right;
+        }
+
+
+    </style>
+</head>
+<body>
+<!----------------------------------------
+        Bắt chước giao diện Google Calculator
+        Hiện chỉ có một số tính năng tính toán cơ bản
+        Hoạt động xoay quanh hàm eval(string) của Javascript
+    ---------------------------------------->
+
+    <table>
+        <tr>
+            <td class="logo" colspan="2" rowspan="2">GOOGLE<br>CALCULATOR</></td>
+            <td colspan="3"></td>
+            <td class="version" colspan="2" >FX-2021</td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+            <td class="info" colspan="2" >Shopee Edition ®©</td>
+        </tr>
+        <tr>
+            <td colspan="7"><textarea class="monitor" readonly id="monitor" cols="30" rows="2"></textarea></td>
+        </tr>
+        <tr>
+            <td><button class="symbolButtons" id="radSymbol">Rad</button></td>
+            <td><button class="symbolButtons" id="degSymbol" style="font-size:70%">Degree</button></td>
+            <td><button class="symbolButtons" id="factorialSymbol">x!</button></td>
+            <td><button class="symbolButtons" id="openParenthesisSymbol">(</button></td>
+            <td><button class="symbolButtons" id="closeParenthesisSymbol">)</button></td>
+            <td><button class="symbolButtons" id="percentSymbol">%</button></td>
+            <td><button class="actionButtons" id="AC">AC</button></td>
+        </tr>
+        <tr>
+            <td><button class="symbolButtons" id="inverse">Inv</button></td>
+            <td><button class="symbolButtons" id="sine">Sin</button></td>
+            <td><button class="symbolButtons" id="logNepe">ln</button></td>
+            <td><button class="numberButtons" id="7">7</button></td>
+            <td><button class="numberButtons" id="8">8</button></td>
+            <td><button class="numberButtons" id="9">9</button></td>
+            <td><button class="symbolButtons" id="devide">÷</button></td>
+        </tr>
+        <tr>
+            <td><button class="symbolButtons" id="PI">π</button></td>
+            <td><button class="symbolButtons" id="cosine">Cos</button></td>
+            <td><button class="symbolButtons" id="log10">log</button></td>
+            <td><button class="numberButtons" id="4">4</button></td>
+            <td><button class="numberButtons" id="5">5</button></td>
+            <td><button class="numberButtons" id="6">6</button></td>
+            <td><button class="symbolButtons" id="multiply">×</button></td>
+        </tr>
+
+        <tr>
+            <td><button class="symbolButtons" id="numberE">e</button></td>
+            <td><button class="symbolButtons" id="tangent">Tan</button></td>
+            <td><button class="symbolButtons" id="root">√</button></td>
+            <td><button class="numberButtons" id="1">1</button></td>
+            <td><button class="numberButtons" id="2">2</button></td>
+            <td><button class="numberButtons" id="3">3</button></td>
+            <td><button class="symbolButtons" id="minus">-</button></td>
+        </tr>
+        <tr>
+            <td><button class="symbolButtons" id="answer">ANS</button></td>
+            <td><button class="inactiveButtons" id="EXP">EXP</button></td>
+            <td><button class="inactiveButtons" id="power">x <sup>y</sup></button></td>
+            <td><button class="numberButtons" id="0">0</button></td>
+            <td><button class="numberButtons" id=".">.</button></td>
+            <td><button class="actionButtons" id="=">=</button></td>
+            <td><button class="symbolButtons" id="add">+</button></td>
+        </tr>
+
+    </table>
+
+    <script src="script-calculating.js"></script>
+    <script src="script-interactive.js"></script>
+    <script src="script-define.js"></script>
+</body>
+</html>
